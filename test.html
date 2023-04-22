@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father:hover {
+            color: brown;
+        }
+
+        .action {
+            background-color: beige;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="father" draggable="true">
+
+    </div>
+
+    <script>
+
+        //随便写的一个练手的玩意
+        let father = document.getElementById("father");
+        let list = [1, 2, 3, 4]
+        for (let i = 0; i < list.length; i++) {
+            let div = document.createElement("div")
+            div.innerHTML = list[i]
+            div.className = "father"
+            father.appendChild(div)
+        }
+        father.addEventListener("click", (e) => {
+            father.className = ' '
+            for (let i = 0; i < father.children.length; i++) {
+                father.children[i].className = 'father'
+            }
+            if (e.target.id != 'father') {
+                e.target.className += ' action'
+            }
+
+
+        })
+
+        //new 方法的过程
+        /*         var a=3;
+                function set(_,name,age){
+                    this.name = name,
+                    this.age = age
+                }
+                function Get(){
+                    console.log(this);
+                    set.call(this)
+                    console.log(this);
+                }
+                var Set = new Get(); 
+                
+                 function myNew(func){
+                    let obj = {}
+                    obj.__proto__= func.prototype
+                    
+                    func.apply(obj,arguments)   
+                    
+                    return obj
+                }
+                var get = myNew(set,'get',11)
+                console.log(get);  */
+
+                //全排列
+
+          /*   let arr = [1,2,3,4,5]
+            let temp
+            function gsort(arr,start,end){
+                if(start==end){
+                    console.log(arr);
+                    return 0;
+                }
+                for(var i = start; i<end; i++){
+                    temp = arr[i]
+                    for(var j=i;j>start;j--){
+                        arr[j]= arr[j-1]
+                    }
+                    arr[start]=temp
+                    gsort(arr,start+1,end)
+                    temp = arr[start]
+                    for(var j=start;j<i;j++){
+                        arr[j]=arr[j+1]
+                    }·
+                    arr[i]=temp
+                }
+            }
+            gsort(arr,0,arr.length) */
+
+    
+	//thsi与new
+        /*   
+    function set(age,name ){
+            this.age = age;
+            this.name = name;
+        } 
+        var age;
+        var name;
+
+        let f =  set(18,'g');
+        console.log(f);
+        console.log(age,name);  */
+    </script>
+</body>
+
+</html>
