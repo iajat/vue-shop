@@ -9,7 +9,9 @@ npm install
 
 
 ## 下依赖 当然less也可能会上失败····
+```
 npm install
+```
 
 ### Compiles and hot-reloads for development
 ```
